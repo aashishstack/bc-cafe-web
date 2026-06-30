@@ -1,26 +1,149 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Premium Editorial Print Palette - Warm Cream default background, Charcoal text, Earth Muted Accent */
+  --background: #F4F0E6;
+  --foreground: #121212;
+
+  --bg-primary: #F4F0E6;
+  --bg-secondary: #EBE6D8;
+  --surface: #FCFAF5;
+  --surface-elevated: #E5E0D0;
+  
+  --accent: #8D7B68;
+  --accent-hover: #756554;
+  --accent-pressed: #5E5042;
+  --accent-glow: rgba(141, 123, 104, 0.15);
+
+  --text-primary: #121212;
+  --text-secondary: #4A453F;
+  --text-muted: #807A72;
+  --text-disabled: #A6A097;
+
+  --border-default: rgba(18, 18, 18, 0.12);
+  --border-hover: rgba(18, 18, 18, 0.3);
+  --border-focused: #8D7B68;
+
+  --shadow-card: none;
+  --shadow-large: none;
+  --shadow-glow: none;
 }
 
-@theme inline {
+html.light, :root.light {
+  /* Since light/dark is toggled, we can inverted colors for dark-mode. We match charcoal body to warm cream texts */
+  --background: #121212;
+  --foreground: #F4F0E6;
+
+  --bg-primary: #121212;
+  --bg-secondary: #1C1C1C;
+  --surface: #181818;
+  --surface-elevated: #282828;
+  
+  --accent: #C5B39C;
+  --accent-hover: #D7C6B0;
+  --accent-pressed: #AFA08C;
+  --accent-glow: rgba(197, 179, 156, 0.12);
+
+  --text-primary: #F4F0E6;
+  --text-secondary: #C6C1B6;
+  --text-muted: #9E998F;
+  --text-disabled: #66635D;
+
+  --border-default: rgba(244, 240, 230, 0.12);
+  --border-hover: rgba(244, 240, 230, 0.3);
+  --border-focused: #C5B39C;
+}
+
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-pressed: var(--accent-pressed);
+  --color-accent-glow: var(--accent-glow);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-disabled: var(--text-disabled);
+
+  --color-success: #5F7464;
+  --color-warning: #C19A6B;
+  --color-danger: #A25A50;
+  --color-info: #6D8294;
+
+  --color-border-default: var(--border-default);
+  --color-border-hover: var(--border-hover);
+  --color-border-focused: var(--border-focused);
+
+  --shadow-card: none;
+  --shadow-large: none;
+  --shadow-glow: none;
+  
+  --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-playfair), serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Glassmorphism overrides to flat minimal print tags */
+.glass {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-default);
+}
+
+.glass-hover:hover {
+  border-color: var(--border-hover);
+}
+
+/* Editorial dot-field overlay */
+.dot-field-bg {
+  background-image: radial-gradient(circle, var(--border-default) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.18;
+}
+
+/* Hover print lift effect */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Minimal Editorial borders */
+.border-editorial {
+  border: 1.5px solid var(--border-default);
+}
+
+.border-editorial-thin {
+  border: 0.75px solid var(--border-default);
 }
