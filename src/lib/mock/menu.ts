@@ -28,7 +28,7 @@ export const MOCK_MENU: MenuItem[] = [
     price: 180,
     rating: 4.9,
     reviewsCount: 124,
-    image: "/hero/cappuccino.png",
+    image: "/bc-cafe-web/hero/cappuccino.png",
     category: "Coffee",
     tags: ["Popular", "Hot"],
     calories: 120,
@@ -41,7 +41,7 @@ export const MOCK_MENU: MenuItem[] = [
     price: 280,
     rating: 4.8,
     reviewsCount: 98,
-    image: "/hero/burger.png",
+    image: "/bc-cafe-web/hero/burger.png",
     category: "Burgers",
     tags: ["Best Seller", "Non-Veg"],
     calories: 540,
@@ -54,7 +54,7 @@ export const MOCK_MENU: MenuItem[] = [
     price: 150,
     rating: 4.7,
     reviewsCount: 86,
-    image: "/hero/cream_bomb.png",
+    image: "/bc-cafe-web/hero/cream_bomb.png",
     category: "Desserts",
     tags: ["New", "Veg"],
     calories: 320,
@@ -67,7 +67,7 @@ export const MOCK_MENU: MenuItem[] = [
     price: 200,
     rating: 4.9,
     reviewsCount: 74,
-    image: "/hero/cappuccino.png", // fallback to cappuccino for demo
+    image: "/bc-cafe-web/hero/cappuccino.png", // fallback to cappuccino for demo
     category: "Coffee",
     tags: ["Popular", "Cold"],
     calories: 5,
@@ -80,7 +80,7 @@ export const MOCK_MENU: MenuItem[] = [
     price: 260,
     rating: 4.6,
     reviewsCount: 65,
-    image: "/hero/burger.png", // fallback
+    image: "/bc-cafe-web/hero/burger.png", // fallback
     category: "Burgers",
     tags: ["Spicy", "Non-Veg"],
     calories: 490,

@@ -104,7 +104,7 @@ export function Hero() {
               {/* Image Frame */}
               <div className="relative aspect-[3/4] bg-bg-secondary overflow-hidden">
                 <Image
-                  src="/hero/cappuccino.png"
+                  src="/bc-cafe-web/hero/cappuccino.png"
                   alt="BC Premium Cappuccino"
                   fill
                   className="object-cover transition-transform duration-[1.5s] hover:scale-105"
